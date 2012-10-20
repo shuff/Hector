@@ -1,0 +1,402 @@
+/*    	
+    	
+    FF6600 // orange
+    666633 //brown
+    000099 //blue
+    FFCC00 //yellow
+*/
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, font, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td {	margin: 0;	padding: 0;	border: 0;	outline: 0;	font-weight: inherit;	font-style: inherit;	font-size: 100%;	font-family: inherit;	vertical-align: baseline;}/* remember to define focus styles! */:focus {	outline: 0;}body {	color: black;	background: white;}ol, ul {	list-style: none;}/* tables still need 'cellspacing="0"' in the markup */table {	border-collapse: separate;	border-spacing: 0;}caption, th, td {	text-align: left;	font-weight: normal;}blockquote:before, blockquote:after,q:before, q:after {	content: "";}blockquote, q {	quotes: "" "";}/*  * Added 2009/02/04 to fix IE7's issue with interpolated  * scaling not turned on by default.  Based on an idea from * http://acidmartin.wordpress.com/2009/01/05/better-image-scaling-and-resampling-in-internet-explorer/ */img{	-ms-interpolation-mode: bicubic;} 
+
+html{
+	width:100%;
+	height:100%;
+}
+.ui-widget-content{
+	z-index:99;
+}
+body {	
+	
+	font-family:Helvetica, Tahoma, Verdana;
+    font-weight: lighter;
+	font-size: 1em; /* 14pt */
+	line-height: 1.4em; /* 20pt */
+    color:#6e6259;
+ 	text-align: center;
+    position:relative;
+	background-size: 100%;
+	width: 100%;	
+	height: 100%;
+	top:2em;
+}
+a{color:#862633;text-decoration: none;}
+a:hover { text-decoration: underline;cursor:pointer;color:#862633;}
+a:hover, a:active { text-decoration: none;outline: 0;color:#862633; }
+textarea
+{
+	background:transparent;
+	border:#CCC 1pt solid;
+	font-family:Arial;
+	font-size: 1em;
+	line-height: 1em;
+	font-weight:normal;
+	text-align:left;
+	height:100%;
+	width:92%;
+	overflow:hidden;
+	text-align:center;
+	resize:none;
+	position:relative;
+	padding:10px;
+}
+#entry_modal{
+	overflow: hidden;
+	padding:5px;
+	height:auto;
+	padding-left:50px;
+	padding-right:50px;
+	padding-bottom:40px;
+}
+#existing_entries{
+	width:100%;
+	position:relative;
+	margin:0 auto;
+	float:left;
+}
+.del_entry_button{
+
+position:relative;
+float:left;
+}
+.del_entry_title{
+	background:transparent;
+	width:48%;
+	height:auto;
+	position:relative;
+	float:left;   
+	background-color: transparent; 
+	color: black; 
+	font-family: Arial;
+	font-size:12px;
+	text-align:right;
+	padding:2px;
+	top:-2px;
+}
+.del_entry{
+	position:relative;
+	float:left;
+	width:100%;
+	margin-bottom:5px;
+	text-align:left;
+	padding:5px;
+}
+#modal_title{
+	width:98%;
+	margin:5px;
+	position:relative;
+	font-weight:bold;
+	font-size:12pt;
+	top:-5px;
+}
+input[type="tiny_button"]
+{
+	font-size: 8pt;
+	font-weight: bold;
+	background:#CCCCCC;
+	text-align:center;
+	margin-top:5px;
+	margin-bottom:5px;
+	margin-left:10px;
+	border:#666666 1px solid;
+	color:white;
+	-webkit-appearance: none;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+    cursor:pointer;
+    z-index:11;
+    position:relative;
+    padding:5px;
+	width:120px;
+	color:black;
+	top:-5px;
+}
+.calendar_title{
+	width:100%;
+	text-align:center;
+	float:left;
+	position:relative;
+}
+.tiny_textarea
+{
+	background:white;
+	font-family:Arial;
+	font-size: 1em;
+	line-height: 1em;
+	font-weight:normal;
+	text-align:left;
+	border:#CCC 1px solid;
+	min-height:50px;
+	width:45%;
+	color:black;
+	resize: none;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	margin-top:-5px;
+	float:left;
+	overflow:auto;
+	padding-bottom:5px;
+}
+input[type="tiny_text"]
+{
+	-webkit-appearance: none;
+	background:white;
+	font-family:Arial;  
+	font-size:1em;
+	font-weight:bold; 
+	line-height: 35px;
+	text-align:left;
+	vertical-align:middle;
+	color:black;
+	padding-top:5px;
+	padding-left:5px;
+	padding-right:5px;
+	padding-bottom:5px;
+	height:25px;
+	width:100%;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	border:#CCC 1px solid;
+}
+h1
+{
+	font-size: 20pt;
+	line-height: 1em;
+	color: #6e6259;
+	font-weight: bold;
+}
+h2
+{
+	font-size: 18pt;
+	line-height: 1em;
+	color: #6e6259;
+	font-weight: normal;
+}
+h3
+{
+	font-size: 12pt;
+	line-height: 1em;
+	color: #6e6259;
+	font-weight:normal;
+	margin-top:10px;
+	margin-bottom:5px;
+	margin-left:8px;
+}
+h4
+{
+	font-size: 9pt;
+	line-height: 1.2em;
+	color: #6e6259;
+	font-weight: normal;
+	margin-left:10px;
+}
+
+hr {
+	color: #6e6259;
+	background-color: #6e6259;
+	height:1px;
+	border: 0;
+}
+
+select{
+   background: transparent;
+  	max-width:250px;
+  	width:100%;
+ 	margin-right:10px;
+   font-size: 16px;
+   border: 1px solid #ccc;
+   font-size:10pt;
+   color:#862633;
+   font-family:Arial;
+    padding:3px;
+    margin-top:10px;
+    margin-bottom:10px;
+    position:relative;
+    left:5px;
+}
+#wrapper{
+	position:relative;
+	margin: 0 auto;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	display:block;
+	max-width:920px;
+	width:100%;
+	height:auto;
+	text-align:center;
+}
+#content
+{
+	max-width:920px;
+	width:100%;
+	position:relative;
+	float:left;
+}
+#spinner
+{
+	position:relative;
+	width:35px;
+	height:35px;
+	display:none;
+	z-index:199;
+	margin-left:48%;
+	float:left;
+}
+#big_calendar{
+	max-width:920px;width:100%;margin: 0 auto;position:relative;
+}
+/**
+ * @preserve Copyright 2011 Syd Lawrence ( www.sydlawrence.com ).
+ * Version: 0.1
+ *
+ * Licensed under MIT and GPLv2.
+ *
+ * For use with jquery.shadow plugin
+ *
+ * Adapted from Nicholas Gallagher's CSS drop shadows without images demo
+ * http://nicolasgallagher.com/css-drop-shadows-without-images/demo/
+ *
+ */
+
+/* Shared styles */
+        
+.jquery-shadow {
+	position:relative;
+	-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 60px rgba(0, 0, 0, 0.1) inset;
+	   -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	        box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.jquery-shadow:before,
+.jquery-shadow:after {
+    content:"";
+    position:absolute; 
+    z-index:-2;
+}
+
+
+
+/* Lifted corners */
+
+.jquery-shadow-lifted:before,
+.jquery-shadow-lifted:after { 
+    bottom:15px;
+    left:10px;
+    width:50%;
+    height:20%;
+    max-width:300px;
+    -webkit-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);   
+       -moz-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+            box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+    -webkit-transform:rotate(-3deg);    
+       -moz-transform:rotate(-3deg);   
+        -ms-transform:rotate(-3deg);   
+         -o-transform:rotate(-3deg);
+            transform:rotate(-3deg);
+}
+
+.jquery-shadow-lifted:after {
+    right:10px; 
+    left:auto;
+    -webkit-transform:rotate(3deg);   
+       -moz-transform:rotate(3deg);  
+        -ms-transform:rotate(3deg);  
+         -o-transform:rotate(3deg);
+            transform:rotate(3deg);
+}
+
+/* Perspective */
+
+.jquery-shadow-perspective:before {
+    left:80px;
+    bottom:5px;
+    width:50%;
+    height:35%;
+    max-width:200px;
+    -webkit-box-shadow:-80px 0 8px rgba(0, 0, 0, 0.4);
+       -moz-box-shadow:-80px 0 8px rgba(0, 0, 0, 0.4);
+            box-shadow:-80px 0 8px rgba(0, 0, 0, 0.4);
+    -webkit-transform:skew(50deg);
+       -moz-transform:skew(50deg);
+        -ms-transform:skew(50deg);
+         -o-transform:skew(50deg);
+            transform:skew(50deg);
+    -webkit-transform-origin:0 100%;
+       -moz-transform-origin:0 100%;
+        -ms-transform-origin:0 100%;
+         -o-transform-origin:0 100%;
+            transform-origin:0 100%;
+}
+
+.jquery-shadow-perspective:after {
+    display:none;
+}
+
+
+/* Side shadows */
+
+.jquery-shadow-sides:before {
+    top:10px;
+    bottom:10px;
+    left:0;
+    right:50%;
+    -webkit-box-shadow:0 0 15px rgba(0,0,0,0.6);
+    -moz-box-shadow:0 0 15px rgba(0,0,0,0.6);
+    box-shadow:0 0 15px rgba(0,0,0,0.6);
+    -moz-border-radius:10px / 100px;
+    border-radius:10px / 100px;
+}
+
+.jquery-shadow-sides-vt-2:before {
+    right:0;
+}
+
+.jquery-shadow-sides-hz-1:before {
+    top:50%;
+    bottom:0;
+    left:10px;
+    right:10px;
+    -moz-border-radius:100px / 10px;
+    border-radius:100px / 10px;
+}
+
+.jquery-shadow-sides-hz-2:before {
+    top:0;
+    bottom:0;
+    left:10px;
+    right:10px;
+    -moz-border-radius:100px / 10px;
+    border-radius:100px / 10px;
+}
+
+ /* Raised shadow - no pseudo-elements needed */
+        
+.jquery-shadow-raised {
+    -webkit-box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+/* Rotated box */
+
+.jquery-shadow-rotated :first-child:before {
+    content:"";
+    position:absolute;
+    z-index:-1;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background:#fff;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 60px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}

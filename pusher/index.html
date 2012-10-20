@@ -1,0 +1,53 @@
+<!doctype html>
+<html class="no-js" lang="en"> 
+<head>
+<meta charset="utf-8">
+<title>Pusher Application</title>
+<meta name="description" content="Pusher Application" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<link rel="stylesheet" href="pusher.css">
+<input type="hidden" name="page" id="page" value="login" />
+
+</head>
+<body>
+
+  	<div id="wrapper">
+  		
+  		<div id="login_content" class="box">
+<div id="login_error"></div>
+		<!-- 
+		//***************************************************************************
+		//							Username
+		//***************************************************************************
+		-->
+		<div id="div_username" class="form_item">
+			<div id="label_username" class="form_label h2">Username</div>
+			<input type="text" name="username" id="input_username"/>
+		</div>
+		<!-- 
+		//***************************************************************************
+		//							Password
+		//***************************************************************************
+		-->		
+		<div id="div_password" class="form_item">
+			<div id="label_password" class="form_label h2">Password</div>
+			<input type="password" name="password" id="input_password"/>
+		</div>
+			<br>
+			<!--
+			<div id="need_password" style="float:left;"><a>Forgot password?</a></div>	
+			<div id="need_password_txt" style="float:left;"></div>	
+			-->
+		<div id="login_button">
+			<input type="button" class="box" id="login_submit" value="Login"  />
+			<div id="spinner"></div>
+		</div>
+
+</div>
+</div>
+
+</body>
+<script src="libs/jquery-1.7.2.js"></script>
+<script src="libs/foundation.js"></script>
+<script src="pusher.js"></script>
+</html>

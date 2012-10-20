@@ -1,0 +1,141 @@
+
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, font, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td {	margin: 0;	padding: 0;	border: 0;	outline: 0;	font-weight: inherit;	font-style: inherit;	font-size: 100%;	font-family: inherit;	vertical-align: baseline;}/* remember to define focus styles! */:focus {	outline: 0;}body {	color: black;	background: white;}ol, ul {	list-style: none;}/* tables still need 'cellspacing="0"' in the markup */table {	border-collapse: separate;	border-spacing: 0;}caption, th, td {	text-align: left;	font-weight: normal;}blockquote:before, blockquote:after,q:before, q:after {	content: "";}blockquote, q {	quotes: "" "";}/*  * Added 2009/02/04 to fix IE7's issue with interpolated  * scaling not turned on by default.  Based on an idea from * http://acidmartin.wordpress.com/2009/01/05/better-image-scaling-and-resampling-in-internet-explorer/ */img{	-ms-interpolation-mode: bicubic;} 
+
+html{
+	width:100%;
+	height:100%;
+}
+
+body {	
+	
+	font-family:Helvetica, Tahoma, Verdana;
+    font-weight: lighter;
+	font-size: 1em; /* 14pt */
+	line-height: 1.4em; /* 20pt */
+    color:#6e6259;
+ 	text-align: center;
+    position:relative;
+	background-size: 100%;
+	width: 100%;	
+	height: 100%;
+	top:2em;
+}
+a{color:#862633;text-decoration: none;}
+a:hover { text-decoration: underline;cursor:pointer;color:#862633;}
+a:hover, a:active { text-decoration: none;outline: 0;color:#862633; }
+
+
+h1
+{
+	font-size: 20pt;
+	line-height: 1em;
+	color: #6e6259;
+	font-weight: bold;
+}
+h2
+{
+	font-size: 18pt;
+	line-height: 1em;
+	color: #6e6259;
+	font-weight: normal;
+}
+h3
+{
+	font-size: 12pt;
+	line-height: 1em;
+	color: #6e6259;
+	font-weight:normal;
+	margin-top:10px;
+	margin-bottom:5px;
+	margin-left:8px;
+}
+h4
+{
+	font-size: 9pt;
+	line-height: 1.2em;
+	color: #6e6259;
+	font-weight: normal;
+	margin-left:10px;
+}
+
+hr {
+	color: #6e6259;
+	background-color: #6e6259;
+	height:1px;
+	border: 0;
+}
+
+select{
+   background: transparent;
+  	max-width:250px;
+  	width:100%;
+ 	margin-right:10px;
+   font-size: 16px;
+   border: 1px solid #ccc;
+   font-size:10pt;
+   color:#862633;
+   font-family:Arial;
+    padding:3px;
+    margin-top:10px;
+    margin-bottom:10px;
+    position:relative;
+    left:5px;
+}
+#wrapper{
+	position:relative;
+	margin: 0 auto;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	display:block;
+	max-width:920px;
+	width:100%;
+	height:auto;
+	text-align:center;
+}
+#content
+{
+	max-width:920px;
+	width:100%;
+	position:relative;
+	float:left;
+}
+#reports{
+	width:450px;
+	min-height:150px;
+	-moz-border-radius:15px;
+	border-radius: 15px;
+	background:white;
+	border:#CCC 1px solid;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	padding:20px;
+	margin: 0 auto;
+
+}
+#dispatch_reports{
+	
+	width:100%;
+	height:auto;
+	text-align:left;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	margin:0 auto;
+	padding:10px;
+	display:none;
+	left:5px;
+	position:relative;
+}
+.report_link{
+	line-height:1em;
+	height:1em;
+	width:100%;
+	position:relative;
+	float:right;	
+	font-family:Arial;
+	font-size:10pt;
+}
+.excel_icon{
+	width:25px;position:relative;float:left;
+	margin-right:5px;
+	top:-7px;
+}
