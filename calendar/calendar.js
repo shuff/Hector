@@ -60,7 +60,7 @@ flush_motal();
 jQuery.extend({
 	db_json:function(options)
 	{
-	var sURL="http://dev.thewoodlandsumc.org/Hector/v2/calendar/calendar.php";	
+	var sURL="http://dev.thewoodlandsumc.org/moon/hector/calendar/calendar.php";	
 	$.ajax({
    	url: sURL,
    	data: options,

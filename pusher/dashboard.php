@@ -22,19 +22,34 @@
   	<div id="content" class="box">
   		<div id="client_welcome"></div>
 		<div id="vessels"></div>
-		 <div id="left_title" style="display:none;">On Ship</div>
+		 <div id="left_title" style="display:none;">On Ship</div>			
 		 <div id="right_title" style="display:none;">Create Truck Load</div>
 		<div id="trucks" style="display:none;">
 			<div id="material_arrow_up" class="circle_up"><div class="arrow">^</div></div><div id="truck_left"><div id="materials"></div></div><div id="material_arrow_down" class="circle_down"><div class="arrow">^</div></div>
-			<div id="truck_center"><div id="warning"><b style="font-size:12px;">Warning!</b><br>This shipment is being edited by another user. If you make any changes, they will be overwritten.</div>
-				<div id="navigation_wrapper">
-					<input type="tiny_text" value="100" id="input_quantity"/><div id="arrows"><img id="up" src="img/up.png"/><img id="down" src="img/down.png"/></div>
-					<div class="arrow_left"><div id="arrow_left_text">Assign</div></div>
-					<div class="arrow_right"><div id="arrow_right_text">Remove</div></div>
-				</div>
+			<div id="truck_center">
+				<div id="warning"><b style="font-size:12px;">Warning!</b><br>This shipment is being edited by another user. If you make any changes, they will be overwritten.</div>
 			</div>
 			<div id="truck_arrow_up" class="circle_up"><div class="arrow">^</div></div><div id="truck_right"></div><div id="truck_arrow_down" class="circle_down"><div class="arrow">^</div></div>
 		</div>	
+		<div id="grid_modal" style"overflow:hidden;">
+			
+			<div id="inner_modal" style="display:none;height:100%;margin-left:35px;margin-top:-15px;">
+			<div id="navigation_wrapper">
+					<input value="100" type="readonly" readonly="readonly" id="input_quantity"/>
+					<div id="arrows"><img id="up" src="img/up.png"/><img id="down" src="img/down.png"/></div>
+					<div class="arrow_left"><div id="arrow_left_text">Assign to truck<br>+</div></div>
+					<div class="arrow_right"><div id="arrow_right_text">Remove from truck<br>-</div></div>
+			</div>
+			<div id="truck_info_wrapper">
+					<h4 class="h4" style="margin-bottom:5px;"><b>Select Trucking Company</b></h4>
+					<select id="input_truck_company" title="Trucking Company"></select>
+					<h4 class="h4" style="margin-bottom:-5px;"><b>Select Truck</b></h4>
+					<select id="input_truck_number" title="Truck Number"></select>
+					<input id="btn_close" style="width:200px;top:40px;position:relative;" class="box" type="button" value="Close" />
+			</div>
+					
+			</div>
+		</div>
 			<div id="truck_bottom"  style="display:none;">
 				<!--
 				<div id="carrier_types_wrapper">
@@ -46,13 +61,7 @@
 					<input type="button" class="box" style="width:auto;left:0;position:absolute;margin-left:10px;margin-top:22px;z-index:99;" id="back_submit" value="< Back"  />
 				</div>
 				<div id="finish_button">
-					<input type="button" class="box" style="width:200px;" id="finish_submit" value="Finish Load"  />
-				</div>
-				<div id="truck_info_wrapper">
-					<h4 class="h4" style="margin-bottom:5px;"><b>Select Trucking Company</b></h4>
-					<select id="input_truck_company" title="Trucking Company"></select>
-					<h4 class="h4" style="margin-bottom:-5px;"><b>Select Truck</b></h4>
-					<select id="input_truck_number" title="Truck Number"></select>
+					<input type="button" class="box" style="width:200px;" id="finish_submit" value="Commit Load"  />
 				</div>
 			</div>
 		</div>

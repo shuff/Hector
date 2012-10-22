@@ -213,7 +213,7 @@ public function materials($input)
 				$description = $row['description'];
 				$parent_id = $row['material_id'];
 			
-				$rec = '<tr  id="rec_id--'.$bol_id.'" weight_per="'.$weight / $bol.'" lading_bill_id="'.$bol_id.'" parent_id="'.$parent_id.'" rec_id="'.$id.'" bol_org="'.$bol.'" bol_num="'.$bol.'" bol_id="'.$bol_id.$parent_id.'" vessel_date_id="'.$vessel_date_id.'" class="tb_rec" style="background-color:'.$color.'">';
+				$rec = '<tr  id="rec_id--'.$bol_id.'" weight_per="'.$weight / $bol.'" lading_bill_id="'.$bol_id.'" parent_id="'.$parent_id.'" rec_id="'.$id.'" bol_org="'.$bol.'" bol_num="'.$bol.'" bol_id="'.$bol_id.$parent_id.'" vessel_date_id="'.$vessel_date_id.'" class="tb_rec materials_item" style="background-color:'.$color.'">';
 				$col_bol  = '<td id="tb_col_a" class="tb_col" style="width:15%;"> <div class="tb_row">'.$bol_id.'</div></td>';
 				$col_desc  = '<td id="tb_col_b" class="tb_col" style="width:100%;text-align:left;"> <div id="desc--'.$bol_id.$parent_id.'" class="tb_row">'.$description.'</div></td>';
 				$col_pieces = '<td id="tb_col_c" class="tb_col"style="width:25%;text-align:center;"> <div id="pieces--'.$bol_id.$parent_id.'" class="tb_row">'.$bol.'</div></td>';
@@ -290,7 +290,7 @@ public function trucks($input)
 		$body = "<tr bol_id=\"$lading_bill_id$parent_id\" truck_id=\"$truck_id\" lading_bill_id=\"$lading_bill_id\" class=\"trucks_tr\" id=\"$lading_bill_id--$material_id\"
 			carrier_id=\"$carrier_id\" weight_per=\"$weight_per\" parent_id=\"$parent_id\" row_id=\"$lading_bill_id$parent_id$carrier_id$truck_id\">
 			<td id=\"tb_col_a\" class=\"tb_col\" style=\"width:5%;padding-right:5px;text-align:left;\"> <div id=\"bol_id--$lading_bill_id$parent_id$carrier_id$truck_id\" class=\"tb_row\">$lading_bill_id</div></td>
-			<td id=\"tb_col_d\" class=\"tb_col\" style=\"width:100%;\"> <div id=\"truck_description--$lading_bill_id$parent_id$carrier_id$truck_id\" class=\"tb_row\">$parent_description</div></td>
+			<td id=\"tb_col_d\" class=\"tb_col\" style=\"width:50%;\"> <div id=\"truck_description--$lading_bill_id$parent_id$carrier_id$truck_id\" class=\"tb_row\">$parent_description</div></td>
 			<td id=\"tb_col_b\" class=\"tb_col\" style=\"width:50%;text-align:center;\"> <div id=\"carrier--$lading_bill_id$parent_id$carrier_id$truck_id\" class=\"tb_row\">$carrier_name</div></td>
 			<td id=\"tb_col_c\" class=\"tb_col\" style=\"width:20%;text-align:right;\"> <div id=\"truck--$lading_bill_id$parent_id$carrier_id$truck_id\" class=\"tb_row\">$truck_name</div></td>
 			<td id=\"tb_col_d\" class=\"tb_col\" style=\"width:15%;text-align:center;\"> <div id=\"quantity--$lading_bill_id$parent_id$carrier_id$truck_id\" class=\"tb_row\">$quantity</div></td>

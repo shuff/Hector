@@ -1,4 +1,32 @@
 $(document).ready(function(e){
+
+function ini_modal()
+{
+	
+	$('#grid_modal').dialog({
+    	minHeight: 250,
+    	minWidth: 410,
+    	modal: true,
+    	resizable: false,
+   		autoOpen:false,
+		open: function() 
+		{	
+			$(this).parent().find('.ui-dialog-titlebar').append('<img tabindex="1" id="btn_cancel" class="btn_cancel" style="position:absolute;top:-10px;left:94.5%;width:30px;" src="img/btn-modalcancel.png"/>');
+		
+			$('#inner_modal').show()
+			$("#btn_close").click(function(e){
+				$("#btn_cancel").click()
+			});
+			$("#btn_cancel").click(function(e){
+				$("#grid_modal").dialog("close");
+				$("#grid_modal").dialog("destroy")
+				flush_dialog('#grid_modal')
+				$('#inner_modal').hide()
+			});
+		}
+ 	});
+}		
+
 	
 $.fn.getHexColor = function() {
     var rgb = $(this).css('color');
@@ -189,11 +217,28 @@ function events()
 		$('#input_truck_company').val(carrier_id)
 		$('#input_truck_number').html($.db_json({"function_name":"truck_list","carrier_id":carrier_id}).message)
 		$('#input_truck_number').val(truck_id)
+		var quantity_id = '#quantity--'+$(this).attr('bol_id')+carrier_id+truck_id
+		$('#input_quantity').val($(quantity_id).html())
 		
+	flush_dialog('#grid_modal')	
+	ini_modal()
+	$("#grid_modal").dialog("open")
+	$('.arrow_left').hide()
+	$('.arrow_right').show()
+	$('#arrows').hide()
+	$('#btn_close').hide()
+	$('#truck_info_wrapper').hide()
+	$('#input_quantity').css('position','relative')
+	$('#input_quantity').css('top','60px')
+	//$('#inner_motal').addClass('inner_modal_truck_selected')
+ 
+
+ 	
+
 	});
 		
 	//materials row selected
-	$(".tb_rec").on('click',function(e){
+	$(".materials_item").on('click',function(e){
 		
 		$('#materials').find('.tb_rec').each(function(e){
 			$(this).css("color","#862633").css("background-color","transparent")
@@ -209,6 +254,21 @@ function events()
 		id = $(this).attr('bol_id')
 		$('#input_quantity').val($('#pieces--'+id).html())
 	
+	flush_dialog('#grid_modal')	
+	ini_modal()
+	$('#grid_modal').dialog('option', 'minHeight', 410);
+	$('.arrow_left').show()
+	$('.arrow_show').show()
+	$('#arrows').show()
+	$('#btn_close').hide()
+	$('.arrow_right').hide()
+ 	$("#grid_modal").dialog("open") 
+ 	$('#truck_info_wrapper').show()	
+ 	$('#input_quantity').css('position','relative')
+	$('#input_quantity').css('top','40px')
+
+ 	//$('#inner_motal').removeClass('inner_modal_truck_selected')
+ //	$('#input_quantity').removeClass('input_quantity_truck_selected')
 	});
 
 	//add up arrow clicked
@@ -326,7 +386,7 @@ function events()
 			
 			$('#input_quantity').val('0')	
 		}			
-			events()
+			//events()
 										
 	});	
 
@@ -400,7 +460,8 @@ function events()
 			}					
 		});
 				}						
-		});				
+		});	
+		$("#btn_cancel").click()			
 		check_arrows()
 	});
 	$('.arrow_left').on('click',function(e){
